@@ -184,7 +184,7 @@
   if (!nav) return;
   var navLinks = nav.querySelectorAll("a[data-spy]");
   var mail = document.querySelector(".site-chrome__contact");
-  var ids = ["intro", "certs", "work3", "education", "contact"];
+  var ids = ["intro", "certs", "work3", "research", "education", "contact"];
   var sections = [];
   for (var i = 0; i < ids.length; i++) {
     var el = document.getElementById(ids[i]);
@@ -199,7 +199,7 @@
 
   function currentId() {
     var probe = barHeight();
-    var win = ids[0];
+    var win = sections[0] ? sections[0].id : "";
     for (var j = 0; j < sections.length; j++) {
       var top = sections[j].el.getBoundingClientRect().top;
       if (top <= probe) win = sections[j].id;
